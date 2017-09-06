@@ -1,8 +1,11 @@
-import requests
-import pymarc
-from pymarc import MARCReader
+import get_token, requests, json
+from get_token import get_token
 
-url = "https://holmes.lib.miamioh.edu:443/iii/sierra-api/v4/bibs/"
+def bib():
+
+token_param = get_token()
+
+url = "https://holmes.lib.miamioh.edu:443/iii/sierra-api/v4/bibs/marc?"
 
 querystring = {"id":"4530689"}
 
@@ -14,4 +17,8 @@ headers = {
 
 response = requests.request("GET", url, headers=headers, params=querystring)
 
-print(response.text)
+bib_data = response.json()
+
+bib_url = bib_data["file"]
+
+marc_response = requests.request("GET", bib_url, headers=headers)
