@@ -1,4 +1,4 @@
-import json, requests, urllib3, get_bass, base64
+import json, requests, urllib3, get_bass_template, base64
 from get_bass import get_bass
 
 
