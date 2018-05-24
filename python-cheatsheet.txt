@@ -1,0 +1,10 @@
+import readline
+readline.write_history_file('/home/relax/Documents/python-output.txt')
+
+import platform
+import os
+if platform.system() == 'Windows':
+    os.system('cls')
+else:
+    os.system('clear')
+    
