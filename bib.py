@@ -2,12 +2,12 @@ import get_token, requests, json
 from get_token import get_token
 
 
-def bib():
+def bib(bibid):
     token_param = get_token()
 
     url = "https://holmes.lib.miamioh.edu:443/iii/sierra-api/v4/bibs/marc?"
 
-    querystring = {"id": "4530689"}  # full number is b4530689a minus b and final check digit a
+    querystring = {"id": {bibid}}  # full number is b4530689a minus b and final check digit a
 
     headers = {
         'authorization': str(token_param),
