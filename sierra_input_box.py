@@ -1,17 +1,20 @@
 #testing box from https://likegeeks.com/python-gui-examples-tkinter-tutorial/
+
 from tkinter import *
-
-
-def windo():
-	window = Tk()
-	 
-	window.title("Sierra input box")
-	 
-	lbl = Label(window, text="Hello")
-	 
-	lbl.grid(column=0, row=0)
-	
-	window.geometry('350x200')
-	 
-	window.mainloop()
+ 
+window = Tk()
+ 
+window.title("Welcome to LikeGeeks app")
+ 
+window.geometry('350x200')
+ 
+lbl = Label(window, text="Hello")
+ 
+lbl.grid(column=0, row=0)
+ 
+btn = Button(window, text="Click Me")
+ 
+btn.grid(column=1, row=0)
+ 
+window.mainloop()
 	
