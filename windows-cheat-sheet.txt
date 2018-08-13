@@ -1,4 +1,4 @@
 Window Python Cheat Sheet
 
 import OS
-os.chdir("C:\\Users\\bomanca\\Documents\\GitHub\\python")
+os.chdir("C:\\Users\\****\\Documents\\GitHub\\python")
