@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 requests = "*"
+objectpath = "*"
+pytz = "*"
 
 [dev-packages]
 
