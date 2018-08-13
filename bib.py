@@ -1,9 +1,12 @@
-import get_token, requests, json
+import get_token, requests, json, sys
 from get_token import get_token
 
+bibid = sys.argv[1]
 
 def bib(bibid):
     token_param = get_token()
+
+    
 
     url = "https://holmes.lib.miamioh.edu:443/iii/sierra-api/v4/bibs/marc?"
 
@@ -24,4 +27,7 @@ def bib(bibid):
 
     marc_response = requests.get(bib_url, headers=headers)
 
-    return marc_response.text
+    print(marc_response.text)
+
+print(bibid)
+bib(bibid)
