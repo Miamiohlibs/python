@@ -22,6 +22,6 @@ def bcode2(bibid):
 
     json_tree = objectpath.Tree(bib_data['entries'])
 
-    result_tuple = tuple(json_tree.execute('$..code'))
+    matType = tuple(json_tree.execute('$.materialType'))[0]
 
-    return result_tuple[2]
+    return matType['code']
