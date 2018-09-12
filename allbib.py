@@ -24,10 +24,15 @@ def bcode2(bibid):
 
     bib_data = response.json()
 
-    json_tree = objectpath.Tree(bib_data['entries'])
+    all = bib_data["entries"]
 
-    matType = tuple(json_tree.execute('$.materialType'))[0]
 
-    print(matType['code'])
+        json_tree = objectpath.Tree(bib_data['entries'])
+
+        matType = tuple(json_tree.execute('$.materialType'))[0]
+
+        print(matType['code'])
+
+        #continue trying to save sierra.json return into file 
 
 bcode2(bibid)
