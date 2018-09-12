@@ -3,6 +3,7 @@ from get_token import get_token
 
 bibid = sys.argv[1]
 #pass along argument when running python scripts from autoit
+#sys.argv causes interactive python to fail to import bcode2.py; but it works fine
 
 #to return bcode2 as an autoit variable
 def bcode2(bibid):
