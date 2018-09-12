@@ -29,5 +29,6 @@ def bcode2(bibid):
     matType = tuple(json_tree.execute('$.materialType'))[0]
 
     return matType['code']
+    print( matType['code'])
 
 bcode2(bibid)
