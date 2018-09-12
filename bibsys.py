@@ -1,14 +1,14 @@
-import get_token, requests, json, objectpath, sys
+import get_token, requests, json, sys
 from get_token import get_token
 
 bibid = sys.argv[1]
 #pass along argument when running python scripts from autoit
 
-#to return bcode2 as an autoit variable
-def bcode2(bibid):
+def bib(bibid):
     token_param = get_token()
 
-    url = "https://holmes.lib.miamioh.edu:443/iii/sierra-api/v4/bibs/?"
+
+    url = 'https://holmes.lib.miamioh.edu:443/iii/sierra-api/v4/bibs/marc?'
 
     querystring = {"id": {bibid}}  # full number is b4530689a minus b and final check digit a
 
@@ -23,10 +23,11 @@ def bcode2(bibid):
 
     bib_data = response.json()
 
-    json_tree = objectpath.Tree(bib_data['entries'])
+    bib_url = bib_data["file"]
 
-    matType = tuple(json_tree.execute('$.materialType'))[0]
+    marc_response = requests.get(bib_url, headers=headers)
 
-    print(matType['code'])
+    print(marc_response.text)
 
-bcode2(bibid)
+print(bibid)
+bib(bibid)
