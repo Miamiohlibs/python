@@ -2,9 +2,9 @@ import get_token, requests, json, sys, urllib, os, objectpath
 from get_token import get_token
 from urllib.parse import urlparse
 
-bibid = sys.argv[1]
+BARCODE = sys.argv[1]
 
-def barcode(bibid):
+def barcode(BARCODE):
     token_param = get_token()
 
 
@@ -25,7 +25,7 @@ def barcode(bibid):
                 "expr": {
                  "op": "equals",
                  "operands": [
-                  bibid,
+                  BARCODE,
                   ""
                  ]
                }
@@ -58,5 +58,5 @@ def barcode(bibid):
 
 ##    print(marc_response.text)
 
-print(bibid)
-barcode(bibid)
+print(BARCODE)
+barcode(BARCODE)
