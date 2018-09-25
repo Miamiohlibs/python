@@ -6,35 +6,31 @@ from urllib.parse import urlparse
 
 BARCODE = sys.argv[1]
 
+##to accept barcode and convert it into an item ID
 def barcode(BARCODE):
     token_param = get_token()
-
-
-
     url = "https://holmes.lib.miamioh.edu:443/iii/sierra-api/v4/items/query?offset=0&limit=100"
 
     querystring = {
-  "queries": [
-          {
-            "target": {
-                "record": {
-                "type": "item"
-                 },
-                "field": {
-                   "tag": "b"
+      "queries": [
+              {"target": {
+                    "record": {
+                    "type": "item"
+                     },
+                    "field": {
+                       "tag": "b"
+                       }
+                    },
+                    "expr": {
+                     "op": "equals",
+                     "operands": [
+                      BARCODE,
+                      ""
+                     ]
                    }
-                },
-                "expr": {
-                 "op": "equals",
-                 "operands": [
-                  BARCODE,
-                  ""
-                 ]
-               }
-             }
-          ]
-        }
-
+                 }
+              ]
+            }
 
     headers = {
         'authorization': str(token_param),
@@ -53,12 +49,6 @@ def barcode(BARCODE):
     id = os.path.split(dir)[1]
 
     print(id)
-
-##response = requests.get(url, headers=headers, params=querystring)
-
-##    marc_response = requests.get(bib_url, headers=headers)
-
-##    print(marc_response.text)
 
 print(BARCODE)
 barcode(BARCODE)
