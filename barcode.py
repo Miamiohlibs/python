@@ -1,5 +1,7 @@
 import get_token, requests, json, sys, urllib, os, objectpath
 from get_token import get_token
+ #sample get_token https://github.com/Miamiohlibs/python/blob/master/get_token.py
+
 from urllib.parse import urlparse
 
 BARCODE = sys.argv[1]

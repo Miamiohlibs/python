@@ -1,6 +1,6 @@
 import json, requests, urllib3, get_bass, base64
 from get_bass import get_bass
-
+##sample get_bass https://github.com/Miamiohlibs/python/blob/master/get_bass_template.py
 
 def get_token():
     bass = get_bass()
