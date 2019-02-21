@@ -1,3 +1,5 @@
+#imports a single bib record from sierra api
+
 import get_token, requests, json, sys
 from get_token import get_token
 
@@ -5,7 +7,7 @@ bibid = sys.argv[1]
 
 def bib(bibid):
 
-    url = "https://holmes.lib.miamioh.edu:443/iii/sierra-api/v4/bibs/marc?"
+    url = "https://lib.catatlog.edu/iii/sierra-api/v4/bibs/marc?"
 
     querystring = {"id": {bibid}}  # full number is b4530689a minus b and final check digit a
 
