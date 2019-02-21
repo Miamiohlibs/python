@@ -3,3 +3,5 @@ get_bass.py
 *.pyc
 *.swp
 *Prod.py
+
+*.mrc
