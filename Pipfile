@@ -9,6 +9,7 @@ objectpath = "*"
 pytz = "*"
 pymarc = "*"
 bytes = "*"
+"json5" = "*"
 
 [dev-packages]
 
