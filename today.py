@@ -9,7 +9,7 @@ def bib(date):
     import get_token, requests, json, urllib3
     from get_token import get_token
 
-    url = "https://lib.caturl.edu/iii/sierra-api/v5/bibs/marc?createdDate="+date
+    url = "https://lib.cat.edu:443/iii/sierra-api/v5/bibs/marc?createdDate="+date+"&suppressed=false"
 
     headers = {
         'authorization': str(get_token()),
