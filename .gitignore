@@ -2,3 +2,4 @@ get_bass.py
 
 *.pyc
 *.swp
+*-prod.py
