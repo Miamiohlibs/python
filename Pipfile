@@ -4,12 +4,12 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-requests = ">=2.20.0"
 objectpath = "*"
 pytz = "*"
 pymarc = "*"
 bytes = "*"
 "json5" = "*"
+requests = "*"
 
 [dev-packages]
 
