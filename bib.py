@@ -28,5 +28,5 @@ def bib(bibid):
 
     print(marc_response.text)
 
-print(bibid)
+#print(bibid)
 bib(bibid)
